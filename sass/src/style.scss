@@ -2273,6 +2273,22 @@ div.wpcf7 {
     text-align: center;
 }
 
+div.wpcf7-mail-sent-ok {
+    border: none;
+    color: #11ab63;
+}
+
+div.wpcf7-validation-errors {
+    border: none;
+    color: $color-pallete-red;
+}
+
+div.wpcf7-response-output {
+    margin: 2rem 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .contact-form {
     textarea {
         height: 170px;
