@@ -46,16 +46,42 @@
 	});
 	$.datetimepicker.setLocale('pl');
 
+	var logic = function( currentDateTime ){
+
+		console.log('Setting min time');
+		
+		today = false;
+
+		sd = new Date($('#reservation_date').val());
+		now = new Date();
+
+		if (sd.getDay() == now.getDay() && 
+			sd.getMonth() == sd.getMonth() &&
+			sd.getYear() == sd.getYear()) {
+			today = true;
+		}
+
+		// 'this' is jquery object datetimepicker
+		if( !today ) {
+			now.setHours('14');
+			now.setMinutes('00');
+		}
+
+		this.setOptions({
+			minTime: now.setSeconds(0)
+		});
+	};
+
 	jQuery('#reservation_time').datetimepicker({
-		minTime: '16:00',
-		maxTime: '24:00',
 		theme:'dark',
 		timepicker: true,
 		datepicker: false,
-		format:'G:i',
+		format:'H:i',
+		formatTime:'H:i',
 		step:30,
 		lang: 'pl',
-		scrollMonth:false,
+		onChangeDateTime:logic,
+		onShow:logic,
 	});
 
 	var submitQuote = function() {
