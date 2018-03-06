@@ -27,14 +27,13 @@ while ( have_posts() ) : the_post(); ?>
 
 <section class="text-section pattern-section text-center cf padding-section offer-spaces divider-bottom">
 	<h1 class="text-dark">Przestrzenie w Cargo</h1>
-    <img src="<?php the_field('offer_plan'); ?>" />
 	<div class="cf text-center">
         <div class="col-md-offset-1 col-md-2 offer-people-left">
             <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-person.svg" class="responsive-img" alt='people'/>
             <p>Aż do <span class="red">250</span> osób w możliwej opcji “standing party”.</p>
         </div>
     	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-4">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-space.svg" class="responsive-img" alt='cargo spaces'/>
+            <img src="<?php the_field('offer_plan'); ?>" class="responsive-img" alt='cargo spaces'/>
     	</div>
 	</div>
 </section>
