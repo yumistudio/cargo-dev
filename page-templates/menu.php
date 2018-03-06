@@ -12,7 +12,7 @@ while ( have_posts() ) : the_post(); ?>
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 		<?php the_content(); ?>
 		<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('menu_ala_carte') ?>">Zobacz Menu a’la carte</a>
-		<a href="#" class="btn btn-secondary-outline" data-file-id="<?php the_field('wine_card') ?>">Zobacz kartę win</a>
+		<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('wine_card') ?>">Zobacz kartę win</a>
 	</div>
 </section>
 
@@ -75,7 +75,7 @@ while ( have_posts() ) : the_post(); ?>
 <section id="menu-deli" class="text-section pattern-section text-center cf padding-section">
 	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
         <?php echo apply_filters('the_content', get_field('content_2')); ?>
-		<a href="#" class="btn btn-secondary-outline">Poznaj ofertę</a>
+		<a href="/oferta/" class="btn btn-secondary-outline">Poznaj ofertę</a>
 	</div>
 </section>
 
