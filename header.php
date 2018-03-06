@@ -119,9 +119,9 @@ $subtitle = get_field('page_subtitle');
 
             <?php if ( get_page_template_slug() == "page-templates/reservation.php") : ?>
                 <div id="reservation-header__title">
-                    <h1>Zarezerwuj stolik</h1>
-                    <p>Zaplanuj wyjątkowe spotkanie wypełniając</br>poniższy formularz lub dzwoniąc do nas</p>
-                    <a href="tel: 12 686 55 22"><i class="icon icon-phone-outline"></i>12 686 55 22</a>
+                    <h1><?php the_title(); ?></h1>
+                    <p><?php echo nl2br($subtitle); ?></p>
+                    <a href="tel: <?php echo ot_get_option( 'phone' ); ?>"><i class="icon icon-phone-outline"></i><?php echo ot_get_option( 'phone' ); ?></a>
                 </div>
 
             <?php elseif ( is_front_page() == TRUE ) : ?>

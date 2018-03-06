@@ -96,10 +96,14 @@ foreach ($query->posts as $key => $post) {
 				$classesStr = '';
 				foreach ($post->filter as $term)
 					$classesStr .= ' '.$term->slug;
+
+				$attachment = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'yumi-full-hd');
+				$width=$attachment[1];
+				$height=$attachment[2];
 			?>
 	
 			<div class="grid-item photoswipe-item <?php echo $widths[$i]; ?> <?php echo $heights[$i]; ?> <?php echo $classesStr; ?>">
-				<a href="<?php the_post_thumbnail_url('yumi-full-hd'); ?>" data-size="1920x1080" style="background-image: url('<?php the_post_thumbnail_url('yumi-gallery-item'); ?>');">
+				<a href="<?php echo $attachment[0]; ?>" data-size="<?php echo $width?>x<?php echo $height?>" style="background-image: url('<?php the_post_thumbnail_url('yumi-gallery-item'); ?>');">
 					<div class="overlay"><i class="icon-search"></i></div>
 				</a>
 			</div>

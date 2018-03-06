@@ -8,33 +8,27 @@
 
 get_header();
 
-?>
-<section id="about-welcome" class="text-section text-center cf divider-bottom padding-section">
-	<h1 class="text-dark">Witaj w CARGO</h1>
-	<div class="cf text-center">
-	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
-        <p>Witaj w miejscu, gdzie z najwyższą starannością wybieramy składniki do podawanych potraw. Sezonowana na sucho, polska wołowina, świeże ryby i owoce morza przyjeżdżające tu z największych targów Europy oraz rozbudowana selekcja win. To tylko niektóre specjały, które spotkasz w nowej, jesienno-zimowej karcie. </p>
-        <p>Rozkoszuj się naszymi daniami na miejscu, lub odwiedź DELIkatesy i zabierz do domu wysokiej jakości mięsa i dodatki, aby przyrządzić je swoim najbliższym.</p>
-	</div>
+while ( have_posts() ) : the_post(); ?>
+<section class="text-section pattern-section text-center cf divider-black padding-section">
+	<div class="container-fluid">
+		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
+		<?php the_content(); ?>
+		</div>
 	</div>
 </section>
-<section id="parallax-1" class="divider-top divider-black">
-    <div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() ?>/assets/images/p-aboutus.jpg" style="min-height: 400px;">
+<section id="parallax-1" class="section-padding divider-top divider-black">
+    <div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php the_field('parallax_1'); ?>" style="min-height: 350px;">
     </div>
 </section>
-<section id="about-deli" class="text-section pattern-section text-center cf padding-section divider-bottom">
-	<h1 class="text-dark">Delikatesy</h1>
-	<div class="cf text-center">
-	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
-        <p>Wykorzystaj czas, gdy przygotowujemy dla Ciebie zamówione dania i zapoznaj się z ofertą naszych DELIkatesów. Znajdziesz tam rarytasy, które tylko czekają, aż wskażesz je palcem.</p>
-        <p>Nasza obsługa zapakuje dla Ciebie dowolnej grubości stek z sezonowanej na sucho, polskiej wołowiny, kawałek aromatycznego, dojrzewającego sera lub świeżą rybę. Możesz cieszyć się ich smakiem w domowym zaciszu, z najbliższymi osobami.</p>
-        <p>Zaproponujemy Ci również świeże, domowe sosy, masła oraz inne dodatki, które  robimy sami, a także aromatyzowane oliwy produkowane specjalnie dla nas.</p>
-        <a href="#" class="btn btn-secondary-outline">Dowiedz się więcej</a>
-	</div>
+<section class="text-section pattern-section text-center cf divider-black padding-section">
+	<div class="container-fluid">
+		<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
+		<?php echo apply_filters('content', get_field('extra_content')); ?>
+		</div>
 	</div>
 </section>
-<section id="parallax-1" class="divider-top divider-black">
-    <div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() ?>/assets/images/p2-aboutus.jpg" style="min-height: 400px;">
+<section id="parallax-1" class="section-padding divider-top divider-black">
+    <div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php the_field('parallax_2'); ?>" style="min-height: 350px;">
     </div>
 </section>
 <section id="home-people" class="padding-section divider-top">
@@ -55,9 +49,7 @@ get_header();
 					</div>
 					<div class="hidden">
 						<p><?php the_excerpt(); ?></p>
-						<div class="col-xs-12">
-							<a href="#" class="btn">Więcej</a>
-						</div>
+						<a href="#" class="btn">Więcej</a>
 					</div>
 					
 				</div>
@@ -65,12 +57,11 @@ get_header();
 			</div>
         	<?php endwhile; wp_reset_postdata(); ?>
 		</div>
-		<div class="max-width hidden-xs hidden-sm">
+		<div class="max-width">
 			<div class="swiper-nav-prev"><i class="icon-navigate-left"></i></div>
 			<div class="swiper-nav-next"><i class="icon-navigate-right"></i></div>
 		</div>
   </div>
-
   <!-- Initialize Swiper -->
 <script>
 (function($) {
@@ -79,28 +70,6 @@ get_header();
 	      slidesPerView: 6,
 	      spaceBetween: 30,
 	      centeredSlides: true,
-		  breakpoints: {
-			1440: {
-				slidesPerView: 5,
-				spaceBetween: 30,
-			},
-			1200: {
-				slidesPerView: 4,
-				spaceBetween: 30,
-			},
-			1024: {
-				slidesPerView: 3,
-				spaceBetween: 30,
-			},
-			768: {
-				slidesPerView: 2,
-				spaceBetween: 10,
-			},
-			480: {
-				slidesPerView: 1,
-				spaceBetween: 10,
-				}
-			},
 		  loop: true,
 	      navigation: {
 	        nextEl: '.swiper-nav-next',
@@ -110,6 +79,6 @@ get_header();
 	});
 })(jQuery);
 </script>
-
 </section>
+<?php endwhile; ?>
 <?php get_footer(); ?>

@@ -30,7 +30,7 @@ function yumi_setup() {
 	add_image_size( 'yumi-profile-size', 100, 100, true );
 	add_image_size( 'yumi-timepoint', 60, 60, true );
 	add_image_size( 'yumi-gallery-item', 500, 0, true );
-	add_image_size( 'yumi-full-hd', 1920, 1080, true );
+	add_image_size( 'yumi-full-hd', 1920, 1080, false );
 	
 
 	

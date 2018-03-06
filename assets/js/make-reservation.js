@@ -75,8 +75,9 @@
 	        cache: false,
             contentType: false,
             processData: false,
-            dataType: 'json',
+            //dataType: 'json',
             success: function(response) {
+            	console.log('działa.');
             	window.location.href= 'http://' + window.location.hostname + '/dziekujemy/';
             	//$ajaxLoader.removeClass('on');
             }

@@ -13,7 +13,6 @@
 
 get_header();
 
-get_template_part( 'template-parts/page/content', 'header' );
 ?>
 <section id="primary" class="section-padding max-width">
 	
