@@ -174,6 +174,11 @@ function yumi_scripts() {
 	wp_enqueue_style( 'swiper', get_theme_file_uri( '/lib/swiper/dist/css/swiper.min.css' ) );
 	wp_enqueue_script( 'swiper', get_theme_file_uri( '/lib/swiper/dist/js/swiper.min.js' ), array(), '', true );
 
+	wp_enqueue_style( 'photoswipe-css', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe.css' ) );
+	wp_enqueue_style( 'photoswipe-default-skin', get_theme_file_uri( '/assets/js/photoswipe/dist/default-skin/default-skin.css' ) );
+	wp_enqueue_script( 'photoswipe-main', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe.min.js' ), array(), '', false );
+	wp_enqueue_script( 'photoswipe-ui', get_theme_file_uri( '/assets/js/photoswipe/dist/photoswipe-ui-default.min.js' ), array(), '', false );
+
 	wp_enqueue_script( 'parallax', get_theme_file_uri( '/assets/js/parallax.js-1.5.0/parallax.min.js' ), array(), '', true );
 
 	//wp_enqueue_script( 'nicescroll', get_theme_file_uri( '/assets/js/nicescroll/dist/jquery.nicescroll.js' ), array(), '', true );

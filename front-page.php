@@ -207,7 +207,7 @@ foreach ($gallery as $key => $image) {
 	</div>	
 	
 	<div class="grid-wrap max-width">
-		<div id="gallery-grid" class="grid image">
+		<div id="gallery-grid" class="grid image photoswipe-wrapper">
 			<?php foreach ($gallery as $key => $image) : //print_r($image); ?>
 			<div class="grid-item photoswipe-item <?php echo $widths[$key]; ?> <?php echo $heights[$key]; ?> <?php echo $image['term']->slug; ?>">
 				<a href="<?php echo $image['sizes']['yumi-gallery-item']; ?>" data-size="1920x1080" class="" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
@@ -358,7 +358,5 @@ userFeed.run();
 
 
 
-
-
-
+<?php get_template_part( 'template-parts/page/content', 'photoswipe' ); ?>
 <?php get_footer();
