@@ -40,20 +40,34 @@ while ( have_posts() ) : the_post(); ?>
 		<div class="swiper-wrapper">
 			<?php $query = new WP_Query( array('post_type' => 'artist', 'posts_per_page' => -1, ) ); ?>    
 	        
-			<?php while ($query->have_posts()) : $query->the_post(); ?>
+			<?php
+			while ($query->have_posts()) : $query->the_post();
+			$aterms = get_the_terms(get_the_ID(), 'artist_categories');
+			?>
         	<div class="swiper-slide" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
 				<div class="swiper-slide__wrapper">
 					<div class="title">
 						<h2><?php the_title(); ?></h2>
-						<h3><?php foreach (get_the_terms(get_the_ID(), 'artist_categories') as $cat) echo $cat->name; ?></h3>
+						<h3><?php if($aterms) foreach ($aterms as $cat) echo $cat->name; ?></h3>
 					</div>
 					<div class="hidden">
 						<p><?php the_excerpt(); ?></p>
-						<a href="#" class="btn">Więcej</a>
+						<a href="#" class="btn" data-mfp-src="#popup-<?php the_ID(); ?>">Więcej</a>
 					</div>
-					
 				</div>
 				<div class="swiper-slide__overlay"></div>
+				<div id="popup-<?php the_ID(); ?>" class="black-popup max-width mfp-hide">
+				  	<div>
+					  	<div class="table">
+					  		<div class="cell img-wrap"><?php the_post_thumbnail('yumi-gallery-item'); ?></div>
+					  		<div class="cell"><div class="content">
+					  			<?php the_title('<h3>', '</h3>');
+					  			foreach ($aterms as $cat) echo '<div class="category">'.$cat->name.'</div>';
+					  			the_content(); ?>
+					  		</div></div>
+					  	</div>
+					</div>
+				</div>
 			</div>
         	<?php endwhile; wp_reset_postdata(); ?>
 		</div>
@@ -66,6 +80,7 @@ while ( have_posts() ) : the_post(); ?>
 <script>
 (function($) {
 	$(document).ready(function() {		
+		
 		var swiper = new Swiper('#home-people__carousel', {
 	      slidesPerView: 6,
 	      spaceBetween: 30,
@@ -76,6 +91,40 @@ while ( have_posts() ) : the_post(); ?>
 	        prevEl: '.swiper-nav-prev',
 	      },
 	    });
+	
+        
+		//var $contentElements = $('#artists-grid .content')
+
+		var setUpNiceScroll = function() {
+			var container = $(this.content.get()).find('.content');
+			
+			container.niceScroll({
+				cursorcolor: '#ffe2a680',
+				cursorborder: '1px solid #ffe2a680',
+			});
+			
+			container.getNiceScroll().resize();
+			//console.log(container.width() + ' / ' + container.height());
+			//console.log(container.getNiceScroll());
+	    }
+
+        $('#home-people__carousel').magnificPopup({
+			delegate: 'a.btn',
+			disableOn: 700,
+			type: 'inline',
+			closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			gallery:{ enabled:true },
+			callbacks: {
+			    open: setUpNiceScroll,
+			    change: setUpNiceScroll,
+			},
+			/*
+			preloader: false,
+			fixedContentPos: false,
+			*/
+		});
 	});
 })(jQuery);
 </script>

@@ -181,12 +181,12 @@ function yumi_scripts() {
 
 	wp_enqueue_script( 'parallax', get_theme_file_uri( '/assets/js/parallax.js-1.5.0/parallax.min.js' ), array(), '', true );
 
-	//wp_enqueue_script( 'nicescroll', get_theme_file_uri( '/assets/js/nicescroll/dist/jquery.nicescroll.js' ), array(), '', true );
+	wp_enqueue_script( 'magnific-popup', get_theme_file_uri( '/assets/js/magnific-popup/dist/jquery.magnific-popup.min.js' ), array(), '', true );
+	wp_enqueue_style( 'magnific-popup', get_theme_file_uri( '/assets/js/magnific-popup/dist/magnific-popup.css' ) );
+	wp_enqueue_script( 'nicescroll', get_theme_file_uri( '/assets/js/nicescroll/dist/jquery.nicescroll.js' ), array(), '', true );
+	
 	//wp_enqueue_script( 'visible', get_theme_file_uri( '/assets/js/jquery.visible.js' ), array(), '', true );
-	//wp_enqueue_script( 'masonry1', get_theme_file_uri( '/assets/js/masonry.pkgd.js' ), array( 'jquery' ), '1.0', false );
-	//wp_enqueue_script( 'mfMasonry', get_theme_file_uri( '/assets/js/multiple-filter-masonry/multipleFilterMasonry.js' ), array( 'jquery' ), '1.0', false );
-	//wp_enqueue_script( 'mfMasonry1', get_theme_file_uri( '/assets/js/multiple-filter-masonry/main.js' ), array( 'jquery' ), '1.0', false );
-
+	
 	wp_enqueue_script( 'yumi-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
 	wp_enqueue_style( 'yumi-style', get_stylesheet_uri() );
 
