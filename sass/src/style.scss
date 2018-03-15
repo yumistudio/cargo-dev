@@ -372,6 +372,7 @@ i {
     border-radius: 5px;
     text-transform: uppercase;
     mask-size: auto 100%;
+    -webkit-mask-size: auto 100%;
     mask-repeat: no-repeat;
     -webkit-mask-image: url(assets/images/button-bg.svg);
     mask-image: url(assets/images/button-bg.svg);

@@ -16,7 +16,7 @@ while ( have_posts() ) : the_post(); ?>
 		</div>
 	</div>
 </section>
-<section id="parallax-1" class="section-padding divider-top divider-black">
+<section id="parallax-1" class="divider-top divider-black">
     <div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php the_field('parallax_1'); ?>" style="min-height: 350px;">
     </div>
 </section>
@@ -27,7 +27,7 @@ while ( have_posts() ) : the_post(); ?>
 		</div>
 	</div>
 </section>
-<section id="parallax-1" class="section-padding divider-top divider-black">
+<section id="parallax-1" class="divider-top divider-black">
     <div class="parallaxed-window" data-parallax="scroll" data-image-src="<?php the_field('parallax_2'); ?>" style="min-height: 350px;">
     </div>
 </section>
