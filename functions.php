@@ -306,7 +306,7 @@ function custom_post_our_people() {
 	$args = array(
 		'labels'        => $labels,
 		'description'   => 'Holds our people',
-		'public'        => true,
+		'public'        => false,
 		'menu_position' => 36,
 		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 		'hierarchical'  => false,
@@ -316,6 +316,16 @@ function custom_post_our_people() {
 	register_post_type( 'artist', $args );
 }
 add_action( 'init', 'custom_post_our_people' );
+
+add_action( 'template_redirect', 'redirect_post_preview' );
+function redirect_post_preview() {
+  $queried_post_type = get_query_var('post_type');
+  if ( is_single() && 'custom_post_our_people' ==  $queried_post_type ) {
+    wp_redirect( home_url(), 301 );
+    exit();
+  }
+}
+
  
 function custom_taxonomy_our_people_category() {
  

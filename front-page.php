@@ -183,6 +183,7 @@ $widths = array(
 );
 
 $gallery = get_field('gallery');
+
 $all_terms = array();
 foreach ($gallery as $key => $image) {
 	if ( $term = get_field('kategoria', $image['ID']))
@@ -209,8 +210,8 @@ foreach ($gallery as $key => $image) {
 	<div class="grid-wrap max-width">
 		<div id="gallery-grid" class="grid image photoswipe-wrapper">
 			<?php foreach ($gallery as $key => $image) : //print_r($image); ?>
-			<div class="grid-item photoswipe-item <?php echo $widths[$key]; ?> <?php echo $heights[$key]; ?> <?php echo $image['term']->slug; ?>">
-				<a href="<?php echo $image['sizes']['yumi-gallery-item']; ?>" data-size="1920x1080" class="" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
+			<div class="grid-item photoswipe-item <?php echo $widths[($key % 7)]; ?> <?php echo $heights[($key % 7)]; ?> <?php echo $image['term']->slug; ?>">
+				<a href="<?php echo $image['sizes']['yumi-gallery-item']; ?>" data-size="<?php echo $image['sizes']['yumi-gallery-item-width']; ?>x<?php echo $image['sizes']['yumi-gallery-item-height']; ?>" class="" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
 					<div class="overlay"><i class="icon-search"></i></div>
 				</a>
 	
