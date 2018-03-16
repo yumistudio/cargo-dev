@@ -54,7 +54,8 @@ get_header(); ?>
 				<div class="card-row">
 					<div class="card-row__container">
 						<div class="title"><?php the_sub_field('name'); ?></div>
-						<div class="price"><?php the_sub_field('cena'); ?><span class="sub"> / <?php the_sub_field('measure_unit'); ?></span></div>
+						<div class="price"><?php the_sub_field('cena'); ?>
+						<span class="sub"> / <?php the_sub_field('measure_unit'); ?></span></div>
 					</div>
 					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 				</div>
