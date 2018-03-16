@@ -5,7 +5,7 @@
  * @package WordPress
  * @since vilicon 1.0
  */
-
+/*
 $grid = array(
 	0 => 'grid-item--height-reg',
 	1 => 'grid-item--height-small',
@@ -28,7 +28,7 @@ $grid = array(
 	18 => 'grid-item--height-small',
 	19 => 'grid-item--height-reg',
 );
-
+*/
 $heights = array(
 	0 => 'grid-item--height-reg',
 	1 => 'grid-item--height-small',
@@ -97,7 +97,7 @@ foreach ($query->posts as $key => $post) {
 				$height=$attachment[2];
 			?>
 	
-			<div class="grid-item photoswipe-item <?php echo $widths[$i]; ?> <?php echo $heights[$i]; ?> <?php echo $classesStr; ?>">
+			<div class="grid-item photoswipe-item <?php echo $widths[($i%6)]; ?> <?php echo $heights[($i%7)]; ?> <?php echo $classesStr; ?>">
 				<a href="<?php echo $attachment[0]; ?>" data-size="<?php echo $width?>x<?php echo $height?>" style="background-image: url('<?php the_post_thumbnail_url('yumi-gallery-item'); ?>');">
 					<div class="overlay"><i class="icon-search"></i></div>
 				</a>
