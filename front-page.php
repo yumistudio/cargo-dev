@@ -112,7 +112,7 @@ get_header(); ?>
 			</div>
         	<?php endwhile; wp_reset_postdata(); ?>
 		</div>
-		<div class="max-width hidden-xs">
+		<div class="arrow-conatainer hidden-xs">
 			<div class="swiper-nav-prev"><i class="icon-navigate-left"></i></div>
 			<div class="swiper-nav-next"><i class="icon-navigate-right"></i></div>
 		</div>
