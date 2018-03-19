@@ -136,7 +136,6 @@ while ( have_posts() ) : the_post(); ?>
 			fixedContentPos: false,
 			*/
 		});
-		$('mfp-arrow-left').append('<p>PENNIS</p>');
 	});
 })(jQuery);
 </script>
