@@ -90,6 +90,28 @@ while ( have_posts() ) : the_post(); ?>
 	      slidesPerView: 6,
 	      spaceBetween: 30,
 	      centeredSlides: true,
+	      breakpoints: {
+			1440: {
+				slidesPerView: 5,
+				spaceBetween: 30,
+			},
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+			},
+			480: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+				}
+			},
 		  loop: true,
 	      navigation: {
 	        nextEl: '.swiper-nav-next',

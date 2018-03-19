@@ -109,6 +109,23 @@ get_header(); ?>
 					
 				</div>
 				<div class="swiper-slide__overlay"></div>
+				<div class="about-us-popup">
+					<div id="popup-<?php the_ID(); ?>" class="black-popup max-width mfp-hide">
+						<div class="black-popup__wrapper">
+							<button title="Zamknij (Esc)" id="mfp-close" type="button" class="mfp-close"><i class="icon-close"></i></button>
+							<div>
+								<div class="table">
+									<div class="cell img-wrap"><?php the_post_thumbnail('yumi-gallery-item'); ?></div>
+									<div class="cell"><div class="content">
+										<?php the_title('<h3>', '</h3>');
+										foreach ($aterms as $cat) echo '<div class="category">'.$cat->name.'</div>';
+										the_content(); ?>
+									</div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
         	<?php endwhile; wp_reset_postdata(); ?>
 		</div>
@@ -153,7 +170,46 @@ get_header(); ?>
 	        nextEl: '.swiper-nav-next',
 	        prevEl: '.swiper-nav-prev',
 	      },
-	    });
+		});
+		
+		//var $contentElements = $('#artists-grid .content')
+
+		var setUpNiceScroll = function() {
+			var container = $(this.content.get()).find('.content');
+			
+			container.niceScroll({
+				cursorcolor: '#ffe2a680',
+				cursorborder: '1px solid #ffe2a680',
+			});
+			
+			container.getNiceScroll().resize();
+			//console.log(container.width() + ' / ' + container.height());
+			//console.log(container.getNiceScroll());
+	    }
+
+        $('#home-people__carousel').magnificPopup({
+			delegate: 'a.btn',
+			disableOn: 700,
+			type: 'inline',
+			closeMarkup: '<button title="Zamknij (Esc)" type="button" class="mfp-close"><i class="icon-close"></i></button>',
+			mainClass: 'mfp-fade about-us-popup',
+			removalDelay: 160,
+			gallery:{ 
+				enabled:true,
+				arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"><i class="icon-navigate-%dir%"></i></button>'
+			},
+			callbacks: {
+			    open: setUpNiceScroll,
+				change: setUpNiceScroll,
+				buildControls: function() {
+					this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+				}
+			},
+			/*
+			preloader: false,
+			fixedContentPos: false,
+			*/
+		});
 	});
 })(jQuery);
 </script>
