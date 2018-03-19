@@ -133,7 +133,7 @@ $subtitle = get_field('page_subtitle');
                 <div id="homepage-header__reservation">
                     <a id="res-btn" href="<?php echo get_permalink('212'); ?>" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
                 </div>
-                <div class="next-section"><i class="icon-arrow-down"></i></div>
+                <div class="add-next-scroll"></div>
             <?php else : ?>
                 <div id="page-header__title">
                     <h1><?php the_title(); ?></h1>

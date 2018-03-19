@@ -117,11 +117,9 @@
 		var nextArrow = $('<div class="next-section"><i class="icon-arrow-down"></i></div>');
 
 		$(this).append(nextArrow);
-
 		nextArrow.click(function() {
-			var target = $(this).closest('section').next();
 			$('html, body').animate({
-			  scrollTop: target.offset().top - 70
+			  scrollTop: $('#meetcargo').offset().top - 70
 			}, 1000);
 		});
 	});
