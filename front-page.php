@@ -93,17 +93,19 @@ get_header(); ?>
 		<div class="swiper-wrapper">
 			<?php $query = new WP_Query( array('post_type' => 'artist', 'posts_per_page' => -1, ) ); ?>    
 	        
-			<?php while ($query->have_posts()) : $query->the_post(); ?>
+			<?php while ($query->have_posts()) : $query->the_post(); 
+				$aterms = get_the_terms(get_the_ID(), 'artist_categories');
+			?>
         	<div class="swiper-slide" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
 				<div class="swiper-slide__wrapper">
 					<div class="title">
 						<h2><?php the_title(); ?></h2>
-						<h3><?php foreach (get_the_terms(get_the_ID(), 'artist_categories') as $cat) echo $cat->name; ?></h3>
+						<h3><?php if($aterms) foreach ($aterms as $cat) echo $cat->name; ?></h3>
 					</div>
 					<div class="hidden">
 						<p><?php the_excerpt(); ?></p>
 						<div class="col-xs-12">
-							<a href="#" class="btn">Więcej</a>
+							<a href="#" class="btn" data-mfp-src="#popup-<?php the_ID(); ?>">Więcej</a>
 						</div>
 					</div>
 					
