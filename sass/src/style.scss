@@ -3161,6 +3161,7 @@ section#recommend {
                     }
                     .price {
                         width: auto;
+                        white-space: nowrap;
                         .sub {
                             font-size: 0.875rem;
                             color: #646464;

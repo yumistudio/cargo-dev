@@ -38,7 +38,10 @@ get_header(); ?>
 				<div class="card-row">
 					<div class="card-row__container">
 						<div class="title"><?php the_sub_field('name'); ?></div>
-						<div class="price"><?php the_sub_field('cena'); ?></div>
+						<div class="price">
+							<?php the_sub_field('cena'); ?>
+							<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
+						</div>
 					</div>
 					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 				</div>
@@ -54,8 +57,10 @@ get_header(); ?>
 				<div class="card-row">
 					<div class="card-row__container">
 						<div class="title"><?php the_sub_field('name'); ?></div>
-						<div class="price"><?php the_sub_field('cena'); ?>
-						<span class="sub"> / <?php the_sub_field('measure_unit'); ?></span></div>
+						<div class="price">
+							<?php the_sub_field('cena'); ?>
+							<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> / <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
+						</div>
 					</div>
 					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 				</div>
@@ -71,7 +76,10 @@ get_header(); ?>
 				<div class="card-row">
 					<div class="card-row__container">
 						<div class="title"><?php the_sub_field('name'); ?></div>
-						<div class="price"><?php the_sub_field('cena'); ?><span class="sub"> / <?php the_sub_field('measure_unit'); ?></span></div>
+						<div class="price">
+							<?php the_sub_field('cena'); ?>
+							<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> / <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
+						</div>
 					</div>
 					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 				</div>
@@ -103,7 +111,7 @@ get_header(); ?>
 						<h3><?php if($aterms) foreach ($aterms as $cat) echo $cat->name; ?></h3>
 					</div>
 					<div class="hidden">
-						<p><?php the_excerpt(); ?></p>
+						<?php the_excerpt(); ?>
 						<div class="col-xs-12">
 							<a href="#" class="btn" data-mfp-src="#popup-<?php the_ID(); ?>">Więcej</a>
 						</div>
@@ -241,15 +249,34 @@ $widths = array(
 	5 => 'grid-item--width-double',
 );
 
-$gallery = get_field('gallery');
+$gallery = array_slice(get_field('gallery'), 0, 7);
+$args = array(
+	'post_type' => 'post',
+	'posts_per_page' => 7
+);
+
+$query = new WP_Query($args);
 
 $all_terms = array();
+
 foreach ($gallery as $key => $image) {
 	if ( $term = get_field('kategoria', $image['ID']))
 		$all_terms[$term->slug] = $term->name;
 
 	$gallery[$key]['term'] = $term;
 }
+
+/*
+$i = 0;
+foreach ($query->posts as $key => $post) {
+	$terms = get_the_category($post->ID);
+	foreach( $terms as $term ) {
+		$all_terms[$term->slug] = $term->name;
+	}
+	$post->filter = $terms;
+	$i++;
+}
+*/
 ?>
 	<div class="btn-toolbar filters">
 		<div data-toggle="buttons" class="btn-group">

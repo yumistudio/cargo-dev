@@ -50,13 +50,23 @@ $widths = array(
 
 get_header();
 
+$all_terms = array();
+$gallery = get_field('gallery', 2);
+foreach ($gallery as $key => $image) {
+	if ( $term = get_field('kategoria', $image['ID']))
+		$all_terms[$term->slug] = $term->name;
+
+	$gallery[$key]['term'] = $term;
+}
+
+/*
+
 $args = array(
 	'post_type' => 'post',
 );
 
 $query = new WP_Query($args);
 
-$all_terms = array();
 $i = 0;
 foreach ($query->posts as $key => $post) {
 	$terms = get_the_category($post->ID);
@@ -66,6 +76,7 @@ foreach ($query->posts as $key => $post) {
 	$post->filter = $terms;
 	$i++;
 }
+*/
 ?>
 
 <section id="gallery" class="padding-section pattern-section divider-bottom">
@@ -86,23 +97,14 @@ foreach ($query->posts as $key => $post) {
 	</div>
 	<div class="grid-wrap max-width">
 		<div id="gallery-grid" class="grid photoswipe-wrapper images" itemscope itemtype="http://schema.org/ImageGallery">
-			<?php $i=0; while ( $query->have_posts() ) : $query->the_post(); global $post;
-				
-				$classesStr = '';
-				foreach ($post->filter as $term)
-					$classesStr .= ' '.$term->slug;
-
-				$attachment = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'yumi-full-hd');
-				$width=$attachment[1];
-				$height=$attachment[2];
-			?>
-	
-			<div class="grid-item photoswipe-item <?php echo $widths[($i%6)]; ?> <?php echo $heights[($i%7)]; ?> <?php echo $classesStr; ?>">
-				<a href="<?php echo $attachment[0]; ?>" data-size="<?php echo $width?>x<?php echo $height?>" style="background-image: url('<?php the_post_thumbnail_url('yumi-gallery-item'); ?>');">
+			<?php foreach ($gallery as $key => $image) : //print_r($image); ?>
+			<div class="grid-item photoswipe-item <?php echo $widths[($key % 7)]; ?> <?php echo $heights[($key % 7)]; ?> <?php echo $image['term']->slug; ?>">
+				<a href="<?php echo $image['sizes']['yumi-gallery-item']; ?>" data-size="<?php echo $image['sizes']['yumi-gallery-item-width']; ?>x<?php echo $image['sizes']['yumi-gallery-item-height']; ?>" class="" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
 					<div class="overlay"><i class="icon-search"></i></div>
 				</a>
+	
 			</div>
-			<?php $i++; endwhile; // End of the loop. ?>	
+			<?php endforeach; // End of the loop. ?>
 		</div>
 	</div>
 
