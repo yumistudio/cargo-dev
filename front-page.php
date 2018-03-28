@@ -153,27 +153,13 @@ get_header(); ?>
 	      slidesPerView: 6,
 	      spaceBetween: 30,
 	      centeredSlides: true,
+	      loopAdditionalSlides: 2,
 		  breakpoints: {
-			1440: {
-				slidesPerView: 5,
-				spaceBetween: 30,
-			},
-			1200: {
-				slidesPerView: 4,
-				spaceBetween: 30,
-			},
-			1024: {
-				slidesPerView: 3,
-				spaceBetween: 30,
-			},
-			768: {
-				slidesPerView: 2,
-				spaceBetween: 10,
-			},
-			480: {
-				slidesPerView: 1,
-				spaceBetween: 10,
-				}
+			1440: { slidesPerView: 5 },
+			1200: { slidesPerView: 4 },
+			1024: { slidesPerView: 3 },
+			768: { slidesPerView: 2 },
+			480: { slidesPerView: 1 }
 			},
 		  loop: true,
 	      navigation: {

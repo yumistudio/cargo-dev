@@ -13,14 +13,12 @@ while ( have_posts() ) : the_post(); ?>
     <div class="cf text-center">
     <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
         <?php the_content(); ?>
-        <a href="#" class="btn btn-secondary" data-file-id="<?php the_field('offer_pdf'); ?>">
+        <a href="#" class="btn btn-secondary download" data-file-id="<?php the_field('offer_pdf'); ?>">
             Pobierz ofertę w PDF
         </a>
     </div>
     <div class="col-lg-offset-1 col-lg-2 offer-people-right">
-        <h2>120–150</h2>
-        <h3>miejsc siedzących</h3>
-        <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-people.png" class="responsive-img" alt='people'/>
+        
     </div>
     </div>
 </section>
@@ -29,12 +27,17 @@ while ( have_posts() ) : the_post(); ?>
 	<h1 class="text-dark">Przestrzenie w Cargo</h1>
 	<div class="cf text-center">
         <div class="col-md-offset-1 col-md-2 offer-people-left">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-person.png" class="responsive-img" alt='people'/>
+            <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-person.svg" class="responsive-img" alt='people'/>
             <p>Aż do <span class="red">250</span> osób w możliwej opcji “standing party”.</p>
         </div>
     	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-4">
             <img src="<?php the_field('offer_plan'); ?>" class="responsive-img" alt='cargo spaces'/>
     	</div>
+        <div class="col-lg-offset-1 col-lg-2 offer-people-right">
+            <h2>120–150</h2>
+            <h3>miejsc siedzących</h3>
+            <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-people.svg" class="responsive-img" alt='people'/>
+        </div>
 	</div>
 </section>
 <section class="offer-features padding-section">
@@ -88,7 +91,7 @@ while ( have_posts() ) : the_post(); ?>
                         <div class="hidden">
                             <p><?php the_sub_field('description_2'); ?></p>
                             <div class="col-xs-12">
-                                <a href="#" class="btn">Więcej</a>
+                                <!--a href="#" class="btn">Więcej</a-->
                             </div>
                         </div>
                     </div>
@@ -107,7 +110,7 @@ while ( have_posts() ) : the_post(); ?>
         </div>
     </div>
     <div class="max-width text-center">
-        <a href="#" class="btn btn-secondary" data-file-id="<?php the_field('offer_pdf'); ?>">
+        <a href="#" class="btn btn-secondary download" data-file-id="<?php the_field('offer_pdf'); ?>">
             Pobierz ofertę w PDF
         </a>
     </div>
