@@ -150,10 +150,12 @@ get_header(); ?>
 (function($) {
 	$(document).ready(function() {
 		var swiper = new Swiper('#home-people__carousel', {
-	      slidesPerView: 6,
 	      spaceBetween: 30,
-	      centeredSlides: true,
-	      loopAdditionalSlides: 2,
+		  slidesPerView: 6,
+		  //centeredSlides: true,
+		  loop: true,
+	      //loopAdditionalSlides: 6,
+		  //loopedSlides: 2,
 		  breakpoints: {
 			1440: { slidesPerView: 5 },
 			1200: { slidesPerView: 4 },
@@ -161,7 +163,6 @@ get_header(); ?>
 			768: { slidesPerView: 2 },
 			480: { slidesPerView: 1 }
 			},
-		  loop: true,
 	      navigation: {
 	        nextEl: '.swiper-nav-next',
 	        prevEl: '.swiper-nav-prev',
@@ -416,7 +417,7 @@ userFeed.run();
 	</div>
 
 	<div id="map"></div>
-	<script src="http://maps.google.com/maps/api/js?callback=initMap&key=AIzaSyCXp5fjmZoq-92myOehWAd_MQ_fcIyAvRQ" async=""></script>
+	<script src="http://maps.google.com/maps/api/js?callback=initMap&key=AIzaSyDXcNi-nVvlUfUoLtC66RGtWCSxZnZKyVs" async=""></script>
 <script>
 	var getMapCenter = function() {
 		   
