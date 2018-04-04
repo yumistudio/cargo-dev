@@ -98,7 +98,7 @@ foreach ($query->posts as $key => $post) {
 	<div class="grid-wrap max-width">
 		<div id="gallery-grid" class="grid photoswipe-wrapper images" itemscope itemtype="http://schema.org/ImageGallery">
 			<?php foreach ($gallery as $key => $image) : //print_r($image); ?>
-			<div class="grid-item photoswipe-item <?php echo $widths[($key % 7)]; ?> <?php echo $heights[($key % 7)]; ?> <?php echo $image['term']->slug; ?>">
+			<div class="grid-item photoswipe-item <?php //echo $widths[($key % 7)]; ?> <?php //echo $heights[($key % 7)]; ?> <?php echo $image['term']->slug; ?>">
 				<a href="<?php echo $image['sizes']['yumi-gallery-item']; ?>" data-size="<?php echo $image['sizes']['yumi-gallery-item-width']; ?>x<?php echo $image['sizes']['yumi-gallery-item-height']; ?>" class="" style="background-image: url('<?php echo $image['sizes']['yumi-gallery-item']; ?>');">
 					<div class="overlay"><i class="icon-search"></i></div>
 				</a>
@@ -109,36 +109,90 @@ foreach ($query->posts as $key => $post) {
 	</div>
 
 <?php get_template_part( 'template-parts/page/content', 'photoswipe' ); ?>
-
+<div class="button-group filter-button-group">
+							Filter: 
+						  	<button data-filter="*">show all</button>
+						  	<button data-filter=".category-a">Category A</button>
+						  	<button data-filter=".category-b">Category B</button>
+						  	<button data-filter=".category-c">Category C</button>
+						</div>
 <div id="masonry_hybrid_demo3"> 
  <div class="grid-sizer"></div> 
  <div class="gutter-sizer"></div> 
- <div class="grid-item"><div class="grid-item-inner">...</div> </div> 
- <div class="grid-item"><div class="grid-item-inner">...</div> </div> 
- <div class="grid-item"><div class="grid-item-inner">...</div> </div> 
- <div class="grid-item"><div class="grid-item-inner">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-a">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-a">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-b">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-b">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-b">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-b">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-a">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-a">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-a">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner category-b">...</div> </div> 
 </div>
 <script>
 (function($) {
 	$(document).ready(function() {
-		var $grid_demo_resize = $('#masonry_hybrid_demo3');
-		var grid3 = new MasonryHybrid($grid_demo_resize, {col: 4, space: 10});
+		var gridHeights = ['grid-item--height-reg', 'grid-item--height-small', 'grid-item--height-reg', 'grid-item--height-reg', 'grid-item--height-small', 'grid-item--height-small', 'grid-item--height-small'];
+		var gridWidths = ['', 'grid-item--width-double', '', '', '', 'grid-item--width-double'];
+		
+		// var $grid = jQuery('#gallery-grid');
+		// $grid.isotope({
+		//   // options
+		//   itemSelector: '.grid-item',
+		//   layoutMode: 'masonry'
+		// });
+		// $('.filters input').change(function() {
+		// 	$(this).parent().siblings().removeClass('on');
+		// 	$(this).parent().toggleClass('on');
+		// 	var value = $(this).val();
+		// 	if ( value != '*' ) value = '.' + value;
+		// 	$grid.isotope({ filter: value });
+		// 	var valueClass = $(this).val();
 
+		// 	$('.grid-item').each(function(index, element) {
+		// 		let elItem = $(element);
+		// 		var selectedItem = ($(elItem).hasClass(valueClass));
+		// 		console.log(value);
+		// 		$(this).each(function() {
+		// 			// console.log(selectedItem);
+		// 			if ( $( this ).is( value ) ) {
+		// 				// alert(this);
+		// 				$(this).addClass(gridHeights[index % gridHeights.length]);
+		// 				$(this).addClass(gridWidths[index % gridHeights.length]);
+		// 			} else {
+		// 				// console.log(this);
+		// 				$(this).removeClass(function (index, css) {
+		// 					return (css.match (/\bgrid-item--\S+/g) || []).join(' '); // removes anything that starts with "page-"
+		// 				});					
+		// 			}
+		// 		});
+				
+		// 	});
+		// });
+		var $grid_demo_resize = $('#masonry_hybrid_demo3');
+		var grid3 = new MasonryHybrid($grid_demo_resize, {col: 4, space: 30});
 		// Use resize
 		var grid_resize = grid3.resize({
-		celHeight 	: 180,
-		sizeMap 	: [[1,2],[2,1],[1,2],[1,2],[1,1],[1,1],[2,1]],
-		resize 		: true,
+			celHeight 	: 180,
+			sizeMap 	: [[1,2],[2,1],[1,2],[1,2],[1,1],[1,1],[2,1]],
+			resize 		: true,
 		});
-
 		// Get Size Map
 		grid_resize.getSizeMap();
-
 		// Set Size Map & apply Size Map
 		grid_resize.setSizeMap([[2,2]]).applySize();
-
+		$('button').on('click', function() {
+			var filterValue = $(this).attr('data-filter');
+			alert(filterValue);
+			grid3.grid.isotope({
+				filter: filterValue
+			});
+		});
 		// Filter
 		grid3.grid.isotope({ filter: "filterValue" });
+
+
 	});
 })(jQuery);
 </script>
