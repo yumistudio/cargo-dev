@@ -341,8 +341,8 @@ foreach ($query->posts as $key => $post) {
 <script type="text/javascript">
 var userFeed = new Instafeed({
 	get: 'user',
-	userId: '623597756', //6246393452 //302456276897634
-	clientId: '02b47e1b98ce4f04adc271ffbd26611d',
+	userId: '4954726935', //6246393452 //302456276897634
+	clientId: 'b4fc2fae461d4791b301103c0c8d5717',
 	accessToken: '4954726935.1677ed0.c8af13437cbe48a9aefe5c1f57007e53',
 	resolution: 'low_resolution',
 	template: '<div class="swiper-slide col-md-3"><a href="{{link}}" target="_blank" id="{{id}}" style="background-image: url(\'{{image}}\')"><div class="overlay"><i class="icon-social-instagram"></div></i></a></div>',
