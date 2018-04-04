@@ -113,20 +113,24 @@ foreach ($query->posts as $key => $post) {
 <script>
 (function($) {
 	$(document).ready(function() {
-		var $grid = jQuery('#gallery-grid');
-		$grid.isotope({
-		  // options
-		  itemSelector: '.grid-item',
-		  layoutMode: 'masonry'
+		var $grid_demo_resize = $('#gallery-grid');
+		var grid3 = new MasonryHybrid($grid_demo_resize, {col: 4, space: 10});
+
+		// Use resize
+		var grid_resize = grid3.resize({
+		celHeight 	: 180,
+		sizeMap 	: [[1,2],[2,1],[1,2],[1,2],[1,1],[1,1],[2,1]],
+		resize 		: true,
 		});
 
-		$('.filters input').change(function() {
-			$(this).parent().siblings().removeClass('on');
-			$(this).parent().toggleClass('on');
-			var value = $(this).val();
-			if ( value != '*' ) value = '.' + value;
-			$grid.isotope({ filter: value });
-		});
+		// Get Size Map
+		grid_resize.getSizeMap();
+
+		// Set Size Map & apply Size Map
+		grid_resize.setSizeMap([[2,2]]).applySize();
+
+		// Filter
+		grid3.grid.isotope({ filter: "filterValue" });
 	});
 })(jQuery);
 </script>
