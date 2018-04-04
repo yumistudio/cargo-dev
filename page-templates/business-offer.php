@@ -18,7 +18,9 @@ while ( have_posts() ) : the_post(); ?>
         </a>
     </div>
     <div class="col-lg-offset-1 col-lg-2 offer-people-right">
-        
+        <h2>120–150</h2>
+        <h3>miejsc siedzących</h3>
+        <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-people.png" class="responsive-img" alt='people'/>
     </div>
     </div>
 </section>
@@ -33,11 +35,6 @@ while ( have_posts() ) : the_post(); ?>
     	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-4">
             <img src="<?php the_field('offer_plan'); ?>" class="responsive-img" alt='cargo spaces'/>
     	</div>
-        <div class="col-lg-offset-1 col-lg-2 offer-people-right">
-            <h2>120–150</h2>
-            <h3>miejsc siedzących</h3>
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-people.svg" class="responsive-img" alt='people'/>
-        </div>
 	</div>
 </section>
 <section class="offer-features padding-section">
