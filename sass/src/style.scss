@@ -3182,7 +3182,11 @@ section#recommend {
         }
     }
 }
-
+#masonry_hybrid_demo3 .grid-item .grid-item-inner{ 
+    position: relative; 
+    background: #ececec; 
+    width: 100%; 
+    height: 100%; }
 section#gallery {
     position: relative;
     background-image: url('assets/images/home_bg_section_03.png');
@@ -3193,6 +3197,7 @@ section#gallery {
     min-height: 800px;
     .grid-item > a {
         box-shadow: 3px 4px 28.5px 1.5px rgba(0, 0, 0, 0.25);
+        background-position: center;
     }
     #gallery__load-more {
         text-align: center;
