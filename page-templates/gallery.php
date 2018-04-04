@@ -110,10 +110,18 @@ foreach ($query->posts as $key => $post) {
 
 <?php get_template_part( 'template-parts/page/content', 'photoswipe' ); ?>
 
+<div id="masonry_hybrid_demo3"> 
+ <div class="grid-sizer"></div> 
+ <div class="gutter-sizer"></div> 
+ <div class="grid-item"><div class="grid-item-inner">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner">...</div> </div> 
+ <div class="grid-item"><div class="grid-item-inner">...</div> </div> 
+</div>
 <script>
 (function($) {
 	$(document).ready(function() {
-		var $grid_demo_resize = $('#gallery-grid');
+		var $grid_demo_resize = $('#masonry_hybrid_demo3');
 		var grid3 = new MasonryHybrid($grid_demo_resize, {col: 4, space: 10});
 
 		// Use resize
