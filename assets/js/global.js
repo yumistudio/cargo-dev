@@ -208,14 +208,6 @@
 		},
 	})
 
-	$(window).load(function() {
-		if( $('#tribe-events-content').hasClass('tribe-events-list') ) {
-			$('.tribe-bar-views-option-list').addClass('on')
-		} else {
-			$('.tribe-bar-views-option-month').addClass('on')
-		}
-	});
-
 	$(document).ready(function () {
 
 		// Text based inputs
