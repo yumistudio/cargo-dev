@@ -169,7 +169,11 @@ function yumi_scripts() {
 		//wp_enqueue_script( 'instafeed', get_theme_file_uri( '/assets/js/instafeed.min.js' ), array(), '1.9.3', true );
 	}
 
+	wp_enqueue_style( 'jquery-ui', get_theme_file_uri( '/assets/js/jquery-ui/jquery-ui.min.css' ), array(), '', false );
+	wp_enqueue_script( 'jquery-ui', get_theme_file_uri( '/assets/js/jquery-ui/jquery-ui.min.js' ), array(), '', false );
+
 	wp_enqueue_script( 'isotope', get_theme_file_uri( '/assets/js/isotope.pkgd.min.js' ), array(), '', false );
+	wp_enqueue_script( 'isotope-masonry-hybrid', get_theme_file_uri( 'assets/js/jquery.masonry-hybrid.min.js' ), array(), '', false );
 	
 	wp_enqueue_style( 'swiper', get_theme_file_uri( '/lib/swiper/dist/css/swiper.min.css' ) );
 	wp_enqueue_script( 'swiper', get_theme_file_uri( '/lib/swiper/dist/js/swiper.min.js' ), array(), '', true );
