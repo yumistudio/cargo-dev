@@ -32,60 +32,66 @@ get_header(); ?>
 		<div class="cards">
 
 			<div class="card">
-				<h2 class="text-dark text-center">Menu a'la carte</h2>
-				<?php if( have_rows('menu_ala_carte') ):
-				    while ( have_rows('menu_ala_carte') ) : the_row(); ?>
-				<div class="card-row">
-					<div class="card-row__container">
-						<div class="title"><?php the_sub_field('name'); ?></div>
-						<div class="price">
-							<?php the_sub_field('cena'); ?>
-							<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
+				<div class="card-inner">
+					<h2 class="text-dark text-center">Menu a'la carte</h2>
+					<?php if( have_rows('menu_ala_carte') ):
+						while ( have_rows('menu_ala_carte') ) : the_row(); ?>
+					<div class="card-row">
+						<div class="card-row__container">
+							<div class="title"><?php the_sub_field('name'); ?></div>
+							<div class="price">
+								<?php the_sub_field('cena'); ?>
+								<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
+							</div>
 						</div>
+						<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 					</div>
-					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
-				</div>
-				<?php endwhile; endif; ?>
-				<div class="card-button">
-					<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('menu_ala_carte', 95) ?>">Zobacz pełne menu</a>
+					<?php endwhile; endif; ?>
+					<div class="card-button">
+						<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('menu_ala_carte', 95) ?>">Zobacz pełne menu</a>
+					</div>
 				</div>
 			</div>
 			<div class="card">
-				<h2 class="text-dark text-center">Karta Win</h2>
-				<?php if( have_rows('wine_card') ):
-				    while ( have_rows('wine_card') ) : the_row(); ?>
-				<div class="card-row">
-					<div class="card-row__container">
-						<div class="title"><?php the_sub_field('name'); ?></div>
-						<div class="price">
-							<?php the_sub_field('cena'); ?>
-							<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> / <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
+				<div class="card-inner">
+					<h2 class="text-dark text-center">Karta Win</h2>
+					<?php if( have_rows('wine_card') ):
+						while ( have_rows('wine_card') ) : the_row(); ?>
+					<div class="card-row">
+						<div class="card-row__container">
+							<div class="title"><?php the_sub_field('name'); ?></div>
+							<div class="price">
+								<?php the_sub_field('cena'); ?>
+								<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> / <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
+							</div>
 						</div>
+						<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 					</div>
-					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
-				</div>
-				<?php endwhile; endif; ?>
-				<div class="card-button">
-					<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('wine_card', 95) ?>">Zobacz kartę win</a>
+					<?php endwhile; endif; ?>
+					<div class="card-button">
+						<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('wine_card', 95) ?>">Zobacz kartę win</a>
+					</div>
 				</div>
 			</div>
 			<div class="card hidden-md">
-				<h2 class="text-dark text-center">DELIkatesy</h2>
-				<?php if( have_rows('deli') ):
-				    while ( have_rows('deli') ) : the_row(); ?>
-				<div class="card-row">
-					<div class="card-row__container">
-						<div class="title"><?php the_sub_field('name'); ?></div>
-						<div class="price">
-							<?php the_sub_field('cena'); ?>
-							<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> / <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
+				<div class="card-inner">
+					<h2 class="text-dark text-center">DELIkatesy</h2>
+					<?php if( have_rows('deli') ):
+						while ( have_rows('deli') ) : the_row(); ?>
+					<div class="card-row">
+						<div class="card-row__container">
+							<div class="title"><?php the_sub_field('name'); ?></div>
+							<div class="price">
+								<?php the_sub_field('cena'); ?>
+								<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> / <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
+							</div>
 						</div>
+						<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
 					</div>
-					<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
-				</div>
-				<?php endwhile; endif; ?>
-				<div class="card-button">
-					<a href="<?php echo get_permalink(97); ?>" class="btn btn-secondary-outline">Zobacz pełną ofertę</a>
+					<?php endwhile; endif; ?>
+					<div class="card-button">
+						<a href="<?php echo get_permalink(97); ?>" class="btn btn-secondary-outline">Zobacz pełną ofertę</a>
+					</div>
 				</div>
 			</div>
 		</div>

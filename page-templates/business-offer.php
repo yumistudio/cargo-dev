@@ -29,7 +29,7 @@ while ( have_posts() ) : the_post(); ?>
 	<h1 class="text-dark">Przestrzenie w Cargo</h1>
 	<div class="cf text-center">
         <div class="col-md-offset-1 col-md-2 offer-people-left">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-person.svg" class="responsive-img" alt='people'/>
+            <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-person.png" class="responsive-img" alt='people'/>
             <p>Aż do <span class="red">250</span> osób w możliwej opcji “standing party”.</p>
         </div>
     	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-4">
