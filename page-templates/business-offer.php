@@ -73,6 +73,7 @@ while ( have_posts() ) : the_post(); ?>
     </div>
     <div class="max-width">
         <div id="home-people__carousel" class="swiper-container carousel-two">
+            <div class="swiper-wrapper">
             <?php if( have_rows('sample_sets') ):
             while ( have_rows('sample_sets') ) : the_row(); ?>
             <div class="fix-padding col-sm-6 col-md-4">
@@ -113,6 +114,7 @@ while ( have_posts() ) : the_post(); ?>
             </div>
             <?php endwhile;
             endif; ?>
+            </div>
         </div>
     </div>
     <div class="max-width">
