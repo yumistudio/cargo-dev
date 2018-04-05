@@ -116,43 +116,6 @@ foreach ($query->posts as $key => $post) {
 <script>
 (function($) {
 	$(document).ready(function() {
-		var gridHeights = ['grid-item--height-reg', 'grid-item--height-small', 'grid-item--height-reg', 'grid-item--height-reg', 'grid-item--height-small', 'grid-item--height-small', 'grid-item--height-small'];
-		var gridWidths = ['', 'grid-item--width-double', '', '', '', 'grid-item--width-double'];
-		
-		// var $grid = jQuery('#gallery-grid');
-		// $grid.isotope({
-		//   // options
-		//   itemSelector: '.grid-item',
-		//   layoutMode: 'masonry'
-		// });
-		// $('.filters input').change(function() {
-		// 	$(this).parent().siblings().removeClass('on');
-		// 	$(this).parent().toggleClass('on');
-		// 	var value = $(this).val();
-		// 	if ( value != '*' ) value = '.' + value;
-		// 	$grid.isotope({ filter: value });
-		// 	var valueClass = $(this).val();
-
-		// 	$('.grid-item').each(function(index, element) {
-		// 		let elItem = $(element);
-		// 		var selectedItem = ($(elItem).hasClass(valueClass));
-		// 		console.log(value);
-		// 		$(this).each(function() {
-		// 			// console.log(selectedItem);
-		// 			if ( $( this ).is( value ) ) {
-		// 				// alert(this);
-		// 				$(this).addClass(gridHeights[index % gridHeights.length]);
-		// 				$(this).addClass(gridWidths[index % gridHeights.length]);
-		// 			} else {
-		// 				// console.log(this);
-		// 				$(this).removeClass(function (index, css) {
-		// 					return (css.match (/\bgrid-item--\S+/g) || []).join(' '); // removes anything that starts with "page-"
-		// 				});					
-		// 			}
-		// 		});
-				
-		// 	});
-		// });
 		var $grid_demo_resize = $('#masonry_gallery');
 		var grid3 = new MasonryHybrid($grid_demo_resize, {col: 4, space: 30});
 		// Use resize

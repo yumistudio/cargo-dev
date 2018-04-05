@@ -88,7 +88,7 @@ while ( have_posts() ) : the_post(); ?>
                         <div class="hidden">
                             <p><?php the_sub_field('description_2'); ?></p>
                             <div class="col-xs-12">
-                                <a href="#" class="btn">Więcej</a>
+                                <a href="#" class="btn" data-mfp-src="#popup-<?php the_ID(); ?>">Więcej</a>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,6 @@ while ( have_posts() ) : the_post(); ?>
                                         <div class="cell img-wrap"><?php the_post_thumbnail('yumi-gallery-item'); ?></div>
                                         <div class="cell"><div class="content">
                                             <?php the_title('<h3>', '</h3>');
-                                            foreach ($aterms as $cat) echo '<div class="category">'.$cat->name.'</div>';
                                             the_content(); ?>
                                         </div></div>
                                     </div>
