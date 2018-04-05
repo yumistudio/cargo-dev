@@ -101,8 +101,8 @@ while ( have_posts() ) : the_post(); ?>
                                     <div class="table">
                                         <div class="cell img-wrap"><?php the_post_thumbnail('yumi-gallery-item'); ?></div>
                                         <div class="cell"><div class="content">
-                                            <?php the_title('<h3>', '</h3>');
-                                            the_content(); ?>
+                                            <h2><?php the_sub_field('name'); ?></h2>
+                                            <?php echo  apply_filters('the_content', the_sub_field('description_3')); ?>
                                         </div></div>
                                     </div>
                                 </div>
