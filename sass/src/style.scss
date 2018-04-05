@@ -3477,6 +3477,7 @@ section#gallery {
                     justify-content: center;      
                     transition: max-height 500ms ease-in-out;
                     transition-delay: 400ms;
+                    overflow: hidden;
     
                     p {
                         padding-top: 20px;
