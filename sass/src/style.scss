@@ -3337,10 +3337,11 @@ section#gallery {
 
     .offer-people-right {
         padding-top: 3rem;
-        h2 {
+        
+        .red {
+            font-family: Rust;
             color: $color-pallete-red !important;
             font-size: 2.75rem;
-            margin-bottom: 0;
         }
         h3 {
             text-transform: none;
