@@ -49,6 +49,7 @@ h1 {
     }
     color: #fff;
     margin-bottom: 1rem;
+    font-weight: lighter;
 }
 
 h2 {
@@ -58,6 +59,7 @@ h2 {
         @include type-layout(xxl, 2.7);
     }
     color: #fff;
+    font-weight: lighter;
 }
 
 h3 {
@@ -70,6 +72,7 @@ h3 {
     @include breakpoint($sm) {
         @include type-layout(l-d, 1.7);
     }   
+    font-weight: lighter;
 }
 
 h4 {
@@ -79,6 +82,7 @@ h4 {
     @include breakpoint($sm) {
         @include type-layout(l-d, 1.5);
     }      
+    font-weight: lighter;
 }
 
 h5 {
