@@ -28,7 +28,7 @@ global $post;
                     <i class="icon icon-phone-outline"></i>
                 </div>
                 <div class="info__text">
-                    <?php echo ot_get_option( 'phone' ); ?>
+                <a href="tel:<?php echo ot_get_option( 'phone' ); ?>"><?php echo ot_get_option( 'phone' ); ?></a>
                 </div>
             </div>
             <div class="info">
@@ -36,7 +36,7 @@ global $post;
                     <i class="icon icon-mail-outline"></i>
                 </div>
                 <div class="info__text">
-                    <a href="<?php echo ot_get_option( 'email' ); ?>"><?php echo ot_get_option( 'email' ); ?></a>
+                    <a href="mailto:<?php echo ot_get_option( 'email' ); ?>"><?php echo ot_get_option( 'email' ); ?></a>
                 </div>
             </div>
 

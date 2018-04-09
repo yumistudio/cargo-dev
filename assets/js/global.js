@@ -359,20 +359,16 @@
 		
 		jQuery(function($) {
 			function fixDiv() {
-				var $cache = $('#getFixed');
+				var $cache = $('#res-btn');
 				if ($(window).scrollTop() > 100)
-					$cache.css({
-						'position': 'fixed',
-						'top': '10px'
-					});
+					$cache.addClass('hidden');
 				else
-					$cache.css({
-						'position': 'relative',
-						'top': 'auto'
-					});
+					$cache.removeClass('hidden');
 			}
-			$(window).scroll(fixDiv);
-			fixDiv();
+			if($('#res-btn').length > 0) {
+				$(window).scroll(fixDiv);
+				fixDiv();
+			}
 		});
 
 })( jQuery );

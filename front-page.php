@@ -44,7 +44,7 @@ get_header(); ?>
 								<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
 							</div>
 						</div>
-						<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
+						<?php if( get_sub_field('ingredients') ) : ?><div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div><?php endif; ?>
 					</div>
 					<?php endwhile; endif; ?>
 					<div class="card-button">
@@ -65,7 +65,7 @@ get_header(); ?>
 								<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> / <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
 							</div>
 						</div>
-						<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
+						<?php if( get_sub_field('ingredients') ) : ?><div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div><?php endif; ?>
 					</div>
 					<?php endwhile; endif; ?>
 					<div class="card-button">
@@ -86,7 +86,7 @@ get_header(); ?>
 								<?php if( get_sub_field('measure_unit') ) : ?> <span class="sub"> / <?php the_sub_field('measure_unit'); ?></span><?php endif; ?>
 							</div>
 						</div>
-						<div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div>
+						<?php if( get_sub_field('ingredients') ) : ?><div class="card-row__disc"><?php the_sub_field('ingredients'); ?></div><?php endif; ?>
 					</div>
 					<?php endwhile; endif; ?>
 					<div class="card-button">
@@ -296,6 +296,11 @@ foreach ($query->posts as $key => $post) {
 	
 			</div>
 			<?php endforeach; // End of the loop. ?>
+		</div>
+		<div class="cf text-md text-center">
+			<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
+				<a href="<?php echo get_permalink('351'); ?>" class="btn btn-secondary-outline">Otwórz galerię</a>
+			</div>
 		</div>
 	</div>
 	

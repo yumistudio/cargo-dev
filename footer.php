@@ -18,8 +18,8 @@
 					<div class="col-sm-12 col-md-6 col-lg-3">
 						<h5>Kontakt</h5>
 						<p><?php echo nl2br(ot_get_option( 'address' )); ?></p>
-						<p><?php echo ot_get_option( 'phone' ); ?></p>
-						<p><?php echo ot_get_option( 'email' ); ?></p>
+						<p><a href="tel:<?php echo ot_get_option( 'phone' ); ?>"><?php echo ot_get_option( 'phone' ); ?></a></p>
+						<p><a href="mailto:<?php echo ot_get_option( 'email' ); ?>"><?php echo ot_get_option( 'email' ); ?></a></p>
 					</div>
 					<div class="col-sm-12 col-md-6 col-lg-3">
 						<h5>Cargo grill & deli</h5>
@@ -69,6 +69,14 @@
 					</div>
 				</div>
 			</footer>
+
+			<?php if(!is_page_template( 'page-templates/reservation.php' )) { ?>
+				<div id="homepage-header__reservation">
+					<a id="res-btn" href="<?php echo get_permalink('212'); ?>" class="btn btn-dark"><i class="icon icon-calendar-clock"></i><span>Rezerwacja</span></a>
+				</div>
+			<?php
+				}
+			?>
 		</div><!-- End: inner-wrap -->
 	</div><!-- End: outer-wrap -->
 	<?php wp_footer(); ?>

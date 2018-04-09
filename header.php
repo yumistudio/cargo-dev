@@ -130,9 +130,6 @@ $subtitle = get_field('page_subtitle');
                     <p><?php echo nl2br($subtitle); ?></p>
                     <a href="/menu-deli/" class="btn btn-primary btn-lg">Sprawdź menu</a>
                 </div>
-                <div id="homepage-header__reservation">
-                    <a id="res-btn" href="<?php echo get_permalink('212'); ?>" class="btn btn-dark"><i class="icon icon-calendar-clock"></i>Rezerwacja</a>
-                </div>
                 <div class="add-next-scroll"></div>
             <?php else : ?>
                 <div id="page-header__title">

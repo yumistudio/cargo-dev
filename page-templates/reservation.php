@@ -123,13 +123,13 @@ window.ticketPrice = 0;
 				<div class="text-field md-form">
 				<i class="prefix"></i>
 					<textarea rows="5" id="order_comments" class="input-text md-textarea" name="order_comments"></textarea>
-					<label for="form8">Specjalne prośby (np. butelka szampana)</label>
+					<label for="order_comments">Specjalne prośby (np. butelka szampana)</label>
 				</div>
 			</div>
 		</div>
 		<div class="container-fluid field-row submit text-center">
 			<div class="col-md-11">
-			<button class="btn btn-secondary" type="submit">Wyślij</button></div>
+			<button class="btn btn-secondary-outline" type="submit">Wyślij</button></div>
 		</div>
 	</form>
 <?php
