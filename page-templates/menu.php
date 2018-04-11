@@ -9,7 +9,7 @@
 get_header();
 while ( have_posts() ) : the_post(); ?>
 <section id="menu-flavors" class="text-section pattern-section text-center cf padding-section">
-	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
+	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 		<?php the_content(); ?>
 		<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('menu_ala_carte') ?>">Zobacz Menu a’la carte</a>
 		<a href="#" class="btn btn-secondary-outline download" data-file-id="<?php the_field('wine_card') ?>">Zobacz kartę win</a>
@@ -39,6 +39,10 @@ while ( have_posts() ) : the_post(); ?>
 			slidesPerView: 6,
 			spaceBetween: 30,
 			breakpoints: {
+			1366: {
+				slidesPerView: 5,
+				spaceBetween: 30,
+			},
 			1024: {
 				slidesPerView: 4,
 				spaceBetween: 30,
@@ -73,7 +77,7 @@ while ( have_posts() ) : the_post(); ?>
 </section>
 
 <section id="menu-deli" class="text-section pattern-section text-center cf padding-section">
-	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
+	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
         <?php echo apply_filters('the_content', get_field('content_2')); ?>
 		<a href="/oferta/" class="btn btn-secondary-outline">Poznaj ofertę</a>
 	</div>
@@ -101,6 +105,10 @@ while ( have_posts() ) : the_post(); ?>
 			slidesPerView: 6,
 			spaceBetween: 30,
 			breakpoints: {
+			1366: {
+				slidesPerView: 5,
+				spaceBetween: 30,
+			},
 			1024: {
 				slidesPerView: 4,
 				spaceBetween: 30,
@@ -127,4 +135,5 @@ while ( have_posts() ) : the_post(); ?>
 </script>
 </section>
 <?php endwhile; ?>
+<?php get_template_part( 'template-parts/page/content', 'reservation' ); ?>
 <?php get_footer(); ?>

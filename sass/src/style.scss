@@ -436,6 +436,10 @@ i {
         color: $white;
         background: $color-pallete-red;
     }
+    
+    &.btn-sm {
+        padding: 6px 25px !important;
+    }
 }
 
 .btn-primary-outline {
@@ -1574,7 +1578,7 @@ footer {
 
 .category {
     display: inline-block;
-    color: $lightgrey;
+    color: darken($lightgrey, 10%);
     text-transform: uppercase;
 }
 
@@ -2454,8 +2458,6 @@ div.wpcf7-response-output {
 
 .filters {
     text-align: center;
-    margin-bottom: 30px;
-    
     input {
         display: none;
     }
@@ -3079,7 +3081,7 @@ input[type="number"] {
             mask-position: top center;
             mask-repeat: no-repeat;
             position: absolute;
-            top: -10px;
+            top: -20px;
             left: 50%;
             transform: translateX(-50%);
             content: '';
@@ -3094,7 +3096,7 @@ input[type="number"] {
             mask-position: top center;
             mask-repeat: no-repeat;
             position: absolute;
-            bottom: -10px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
             content: '';
@@ -3107,7 +3109,7 @@ input[type="number"] {
     &-black {
         &::after {
             position: absolute;
-            bottom: -10px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
             content: '';
@@ -3123,7 +3125,7 @@ input[type="number"] {
     &-black-top {
         &::before {
             position: absolute;
-            top: -10px;
+            top: -20px;
             left: 50%;
             transform: translateX(-50%);
             content: '';
@@ -3200,6 +3202,7 @@ section#recommend {
             h2 {
                 font-family: Gabriele;
                 margin: 45px 0px 35px 0px;
+                font-size: 1.8rem;
             }
 
             &-row {
@@ -3274,7 +3277,6 @@ section#gallery {
         margin: 2rem 0;
     }
     .filters {
-        padding-top: 1rem;
         label {
             cursor: pointer;
             font-family: Rust;
@@ -3301,10 +3303,33 @@ section#gallery {
                     width: 100%;
                 }
             }
+            &.on {
+                color: $color-pallete-red !important;
+                &::after {
+                    transition: all .35s ease-in-out;
+                    margin-top: 10px;
+                    display: block;
+                    content: '';
+                    background-image: url('assets/images/hover-red.png');
+                    background-size: inherit;
+                    background-position-x: left;
+                    background-position-y: top;
+                    height: 3px;
+                    opacity: 1;
+                    width: 100%;
+                }
+
+            }
         }
     }
-    .btn {
+    #gallery-grid + .text-md {
         margin-top: 2rem;
+    }
+}
+
+.home {
+    h1 {
+        font-size: 3rem !important;
     }
 }
 
@@ -3709,6 +3734,9 @@ p.p-outline {
             background-clip: content-box;
             border: solid 6px #e4d0b2;
             &__wrapper {
+                background-image: url("assets/images/background-sections/modal-bg.png");
+                background-size: cover;
+                background-position: center;
                 padding: 60px 100px;
             }
         }

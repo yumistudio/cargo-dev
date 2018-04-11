@@ -10,6 +10,10 @@ wp_enqueue_script( 'parallax', get_theme_file_uri( '/assets/js/parallax.js-1.5.0
 get_header();
 while ( have_posts() ) : the_post(); ?>
 <section class="text-section pattern-section text-center cf padding-section offer-meetings">
+<div class="section-header">
+		<h1 class="text-dark"><span>Spotkania na poziomie</span></h1>
+		<div class="section-intro"></div>
+	</div>
     <div class="cf text-center">
     <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
         <?php the_content(); ?>

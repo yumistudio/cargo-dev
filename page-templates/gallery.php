@@ -80,7 +80,6 @@ foreach ($query->posts as $key => $post) {
 ?>
 
 <section id="gallery" class="padding-section pattern-section divider-bottom">
-	<h1 class="text-dark text-center">Galeria</h1>
 	<div class="btn-toolbar filters">
 		<div data-toggle="buttons" class="btn-group">
 			<label class="btn on">
@@ -88,7 +87,7 @@ foreach ($query->posts as $key => $post) {
 				Wszystkie
 			</label>
 			<?php foreach ($all_terms as $slug => $name) : ?>
-			<label class="btn on">
+			<label class="btn">
 				<input name="filter" data-filter=".<?php echo $slug; ?>" type="radio">
 				<?php echo $name; ?>
 			</label>
@@ -130,6 +129,8 @@ foreach ($query->posts as $key => $post) {
 		grid_resize.setSizeMap([[1,2],[2,1],[1,2],[1,2],[1,1],[1,1],[2,1]]).applySize();
 		$('.filters input').on('click', function() {
 			var filterValue = $(this).attr('data-filter');
+			$(this).parent().siblings().removeClass('on');
+            //$('.btn-toolbar .btn').not(this).removeClass('active');
 			grid3.grid.isotope({
 				filter: filterValue
 			});

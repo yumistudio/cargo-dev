@@ -17,10 +17,10 @@ get_header(); ?>
 <section id="meetcargo" class="pattern-section text-center cf divider-top divider-black padding-section">
 	<h1 class="text-dark">Poznaj Cargo</h1>
 	<div class="cf text-md text-center">
-	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
+	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 		<?php the_content(); ?>
 
-		<a href="<?php echo get_permalink('89'); ?>" class="btn btn-secondary-outline">Dowiedz się więcej</a>
+		<a href="<?php echo get_permalink('89'); ?>" class="btn btn-secondary-outline btn-sm">Dowiedz się więcej</a>
 	</div>
 	</div>
 </section>
@@ -278,7 +278,7 @@ foreach ($query->posts as $key => $post) {
 				Wszystkie
 			</label>
 			<?php foreach ($all_terms as $slug => $name) : ?>
-			<label class="btn on">
+			<label class="btn">
 				<input name="filter" value="<?php echo $slug; ?>" type="radio">
 				<?php echo $name; ?>
 			</label>
@@ -299,7 +299,7 @@ foreach ($query->posts as $key => $post) {
 		</div>
 		<div class="cf text-md text-center">
 			<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-4 col-lg-4">
-				<a href="<?php echo get_permalink('351'); ?>" class="btn btn-secondary-outline">Otwórz galerię</a>
+				<a href="<?php echo get_permalink('351'); ?>" class="btn btn-secondary-outline btn-sm">Otwórz galerię</a>
 			</div>
 		</div>
 	</div>
@@ -316,7 +316,7 @@ foreach ($query->posts as $key => $post) {
 
 		$('.filters input').change(function() {
 			$(this).parent().siblings().removeClass('on');
-			$(this).parent().toggleClass('on');
+			$(this).parent().addClass('on');
 			var value = $(this).val();
 			if ( value != '*' ) value = '.' + value;
 			$grid.isotope({ filter: value });
