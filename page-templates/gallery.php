@@ -79,7 +79,7 @@ foreach ($query->posts as $key => $post) {
 */
 ?>
 
-<section id="gallery" class="padding-section pattern-section divider-bottom">
+<section id="gallery" class="padding-section pattern-section">
 	<div class="btn-toolbar filters">
 		<div data-toggle="buttons" class="btn-group">
 			<label class="btn on">
