@@ -113,6 +113,7 @@ foreach ($query->posts as $key => $post) {
 
 <?php get_template_part( 'template-parts/page/content', 'photoswipe' ); ?>
 <script>
+
 (function($) {
 	$(document).ready(function() {
 		var $grid_demo_resize = $('#masonry_gallery');

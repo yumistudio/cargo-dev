@@ -41,7 +41,7 @@ window.ticketPrice = 0;
 					<i class="icon icon-clock prefix"></i>
 					<input id="reservation_time" name="reservation_time" type="text" class="select form-control w-50" required/>
 					<i class="icon-dropdown selector-arrow"></i>
-					<label for="reservation_time">Wybierz godzinę</label>
+					<label class="w-50" for="reservation_time">Wybierz godzinę</label>
 				</div>
                 
                 <div class="md-form">
