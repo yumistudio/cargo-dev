@@ -208,10 +208,6 @@ get_header(); ?>
 					this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
 				}
 			},
-			/*
-			preloader: false,
-			fixedContentPos: false,
-			*/
 		});
 	});
 })(jQuery);
