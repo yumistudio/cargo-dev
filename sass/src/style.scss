@@ -3428,23 +3428,6 @@ section#gallery {
 .offer-meetings {
     background-image: url('assets/images/background-sections/offer_bg_section_01.png');
     background-position: top center;
-
-    .offer-people-right {
-        padding-top: 3rem;
-        
-        .red {
-            font-family: Rust;
-            color: $color-pallete-red !important;
-            font-size: 2.75rem;
-        }
-        h3 {
-            text-transform: none;
-            font-size: 1.375rem;
-            margin-bottom: 14px;
-            margin-top: 0;
-        }
-        transform: translateY(25px);
-    }
 }
 
 .offer-spaces {
@@ -3452,6 +3435,9 @@ section#gallery {
     background-position: bottom center;
 
     padding-top: 0 !important;
+    &-image {
+        margin-bottom: 25px;
+    }
     h1 {
         font-size: 1.875rem;
         font-family: 'Gabriele';
@@ -3472,6 +3458,24 @@ section#gallery {
             text-align: center;
             font-size: 1.375rem;
             font-family: 'Gabriele';
+        }
+    }
+    
+    .offer-people-right {
+        padding-top: 3rem;
+        @include breakpoint($md) {
+            transform: translateY(-120px);
+        }
+        .red {
+            font-family: Rust;
+            color: $color-pallete-red !important;
+            font-size: 2.75rem;
+        }
+        h3 {
+            text-transform: none;
+            font-size: 1.375rem;
+            margin-bottom: 14px;
+            margin-top: 0;
         }
     }
 }

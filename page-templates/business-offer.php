@@ -21,24 +21,25 @@ while ( have_posts() ) : the_post(); ?>
             Pobierz ofertę w PDF
         </a>
     </div>
-    <div class="col-lg-offset-1 col-lg-2 offer-people-right">
-        <span class="red">120–150</span>
-        <h3>miejsc siedzących</h3>
-        <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-people.png" class="responsive-img" alt='people'/>
-    </div>
     </div>
 </section>
 
 <section class="text-section pattern-section text-center cf padding-section offer-spaces divider-bottom">
 	<h1 class="text-dark">Przestrzenie w Cargo</h1>
 	<div class="cf text-center">
-        <div class="col-md-offset-1 col-md-2 offer-people-left">
+        <div class="col-md-offset-1 col-md-8 col-md-2 offer-people-left">
             <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-person.png" class="responsive-img" alt='people'/>
             <p>Aż do <span class="red">250</span> osób w możliwej opcji “standing party”.</p>
         </div>
-    	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-4">
+    	<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-4 offer-spaces-image">
             <img src="<?php the_field('offer_plan'); ?>" class="responsive-img" alt='cargo spaces'/>
     	</div>
+        
+        <div class="col-lg-offset-1 col-md-8 col-lg-2 offer-people-right">
+            <span class="red">120–150</span>
+            <h3>miejsc siedzących</h3>
+            <img src="<?php echo get_template_directory_uri() ?>/assets/images/offer-people.png" class="responsive-img" alt='people'/>
+        </div>
 	</div>
 </section>
 <section class="offer-features">
